@@ -1,7 +1,20 @@
 document.querySelectorAll('.view-ar-btn').forEach((button) => {
-  button.addEventListener('click', () => {
+  button.addEventListener('click', async () => {
     const viewer = document.getElementById(button.dataset.target);
-    if (viewer) viewer.activateAR();
+    if (!viewer) return;
+    try {
+      await viewer.activateAR();
+    } catch (err) {
+      alert('AR could not start: ' + err.message);
+    }
+  });
+});
+
+document.querySelectorAll('model-viewer').forEach((viewer) => {
+  viewer.addEventListener('ar-status', (event) => {
+    if (event.detail.status === 'failed') {
+      alert('AR failed to launch on this device/browser (model-viewer reported "failed").');
+    }
   });
 });
 
