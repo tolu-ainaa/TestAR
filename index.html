@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AR Model Library</title>
+  <script type="module" src="./vendor/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="page-header">
+    <h1>AR Model Library</h1>
+    <p>Drag a model to rotate it. Tap the AR button to place it on a real surface.</p>
+  </header>
+
+  <main class="card-grid">
+    <section class="card">
+      <model-viewer
+        id="skeleton"
+        class="viewer"
+        src="./models/human_skeleton_final.glb"
+        alt="Human skeleton 3D model"
+        camera-controls
+        touch-action="pan-y"
+        auto-rotate
+        auto-rotate-delay="3000"
+        shadow-intensity="1"
+        exposure="1"
+        environment-image="neutral"
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        ar-scale="auto"
+      >
+        <button class="hotspot" slot="hotspot-skull" data-position="0 1.55 0.05" data-normal="0 0 1">
+          <span class="hotspot-label">Skull</span>
+        </button>
+        <button class="hotspot" slot="hotspot-spine" data-position="0 1.1 -0.05" data-normal="0 0 1">
+          <span class="hotspot-label">Spine</span>
+        </button>
+        <button class="hotspot" slot="hotspot-femur" data-position="0.12 0.55 0" data-normal="1 0 0">
+          <span class="hotspot-label">Femur</span>
+        </button>
+        <button class="ar-button" slot="ar-button">View in your space</button>
+      </model-viewer>
+      <div class="card-body">
+        <h2>Human Skeleton</h2>
+        <p>Tap a marker to see the bone name. Drag to rotate, pinch to zoom.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <model-viewer
+        class="viewer"
+        src="./models/chemistry_benzene_final.glb"
+        alt="Benzene molecule 3D model"
+        camera-controls
+        touch-action="pan-y"
+        auto-rotate
+        auto-rotate-delay="3000"
+        shadow-intensity="1"
+        exposure="1"
+        environment-image="neutral"
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        ar-scale="auto"
+      >
+        <button class="ar-button" slot="ar-button">View in your space</button>
+      </model-viewer>
+      <div class="card-body">
+        <h2>Benzene Molecule</h2>
+        <p>Ring structure with alternating carbon-hydrogen bonds.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <model-viewer
+        class="viewer"
+        src="./models/animal_cell_final.glb"
+        alt="Animal cell 3D model"
+        camera-controls
+        touch-action="pan-y"
+        auto-rotate
+        auto-rotate-delay="3000"
+        shadow-intensity="1"
+        exposure="1"
+        environment-image="neutral"
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        ar-scale="auto"
+      >
+        <button class="ar-button" slot="ar-button">View in your space</button>
+      </model-viewer>
+      <div class="card-body">
+        <h2>Animal Cell</h2>
+        <p>Explore organelles inside a typical eukaryotic cell.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
