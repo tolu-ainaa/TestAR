@@ -69,9 +69,29 @@ body {
 }
 
 .card-body p {
-  margin: 0;
+  margin: 0 0 0.9rem;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.view-ar-btn {
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.view-ar-btn:hover {
+  filter: brightness(1.08);
+}
+
+.view-ar-btn:active {
+  filter: brightness(0.95);
 }
 
 .hotspot {
@@ -97,20 +117,6 @@ body {
   border-radius: 6px;
   font-size: 0.75rem;
   pointer-events: none;
-}
-
-.ar-button {
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 999px;
-  padding: 0.5rem 1rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-  cursor: pointer;
 }
 
 @media (prefers-color-scheme: light) {

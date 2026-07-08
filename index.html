@@ -10,7 +10,7 @@
 <body>
   <header class="page-header">
     <h1>AR Model Library</h1>
-    <p>Drag a model to rotate it. Tap the AR button to place it on a real surface.</p>
+    <p>Drag a model to rotate it, or tap "View in AR" to jump straight into placing it on a real surface.</p>
   </header>
 
   <main class="card-grid">
@@ -40,16 +40,17 @@
         <button class="hotspot" slot="hotspot-femur" data-position="0.12 0.55 0" data-normal="1 0 0">
           <span class="hotspot-label">Femur</span>
         </button>
-        <button class="ar-button" slot="ar-button">View in your space</button>
       </model-viewer>
       <div class="card-body">
         <h2>Human Skeleton</h2>
         <p>Tap a marker to see the bone name. Drag to rotate, pinch to zoom.</p>
+        <button class="view-ar-btn" data-target="skeleton">View in AR</button>
       </div>
     </section>
 
     <section class="card">
       <model-viewer
+        id="benzene"
         class="viewer"
         src="./models/chemistry_benzene_final.glb"
         alt="Benzene molecule 3D model"
@@ -64,16 +65,17 @@
         ar-modes="webxr scene-viewer quick-look"
         ar-scale="auto"
       >
-        <button class="ar-button" slot="ar-button">View in your space</button>
       </model-viewer>
       <div class="card-body">
         <h2>Benzene Molecule</h2>
         <p>Ring structure with alternating carbon-hydrogen bonds.</p>
+        <button class="view-ar-btn" data-target="benzene">View in AR</button>
       </div>
     </section>
 
     <section class="card">
       <model-viewer
+        id="cell"
         class="viewer"
         src="./models/animal_cell_final.glb"
         alt="Animal cell 3D model"
@@ -88,11 +90,11 @@
         ar-modes="webxr scene-viewer quick-look"
         ar-scale="auto"
       >
-        <button class="ar-button" slot="ar-button">View in your space</button>
       </model-viewer>
       <div class="card-body">
         <h2>Animal Cell</h2>
         <p>Explore organelles inside a typical eukaryotic cell.</p>
+        <button class="view-ar-btn" data-target="cell">View in AR</button>
       </div>
     </section>
   </main>

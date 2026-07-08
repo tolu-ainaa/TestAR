@@ -1,3 +1,10 @@
+document.querySelectorAll('.view-ar-btn').forEach((button) => {
+  button.addEventListener('click', () => {
+    const viewer = document.getElementById(button.dataset.target);
+    if (viewer) viewer.activateAR();
+  });
+});
+
 // Alt+click anywhere on a model to log its 3D coordinate to the console.
 // Use that value to fine-tune the data-position of a hotspot button in index.html.
 document.querySelectorAll('model-viewer').forEach((viewer) => {
